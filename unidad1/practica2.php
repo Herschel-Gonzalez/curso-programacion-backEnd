@@ -1,5 +1,5 @@
 <?php
-    echo "<center><h1> Pracrtica 2</h1></center>";
+    echo "<center><h1> Practica 2</h1></center>";
     echo 'Tabla';
  
     echo "<br>"; // Salto de linea
