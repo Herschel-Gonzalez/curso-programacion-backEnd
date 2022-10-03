@@ -33,13 +33,13 @@
 
     //busca un producto por codigo de barras
     function buscar_producto($codigo){
-        $fl = file('productos.txt');
+        $fl = file('productos/productos.txt');
         $i = 0;
         $producto = "";
         while(count($fl)>$i){
             $line = $fl[$i];
             $vec = explode("@@",$line);
-            if ($codigo==$vec[0]) {
+            if ($codigo==$vec[1]) {
                 $producto=$vec;
             }
             $i++;

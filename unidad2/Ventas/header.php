@@ -13,15 +13,15 @@ echo <<<_head
             <ul>
             <li>Productos
                 <ul>
-                    <li><a href="http://localhost/unidad2/ventas/productos/nuevo.php">Nuevo</a></li>
-                    <li><a href="http://localhost/unidad2/ventas/productos/listado.php">Listado</a></li>
+                    <li><a href="/unidad2/ventas/productos/nuevo.php">Nuevo</a></li>
+                    <li><a href="/unidad2/ventas/productos/listado.php">Listado</a></li>
                 </ul>
             </li>
 
             <li>Ventas
             <ul>
-                <li><a href="ventas/venta_nuevo.php">Nuevo</a></li>
-                <li><a href="ventas/venta_listado.php">Listado</a></li>
+                <li><a href="/unidad2/ventas/venta_nuevo.php">Nuevo</a></li>
+                <li><a href="/unidad2/ventas/venta_listado.php">Listado</a></li>
             </ul>
             </li>
             </ul>
