@@ -1,6 +1,5 @@
 <?php
 //retornara un select con las marcas, que leera desde un archivo
-    $productos = [];
     function cargarMarcas(){
         $fh = fopen("marcas.txt",'r') or die ("Error al crear el archivo");
         $opt = "";
@@ -49,21 +48,20 @@
     }
 
     function renglon_producto($producto,$contador){
-        agregar_producto_a_venta($producto);
-        echo var_dump($productos);
+
+        
+
+
         return 
     "<tr>
         <td>No.</td>
         <td><input type='number' name='produ_$contador' id='produ_$contador'></td>
-        <td>$producto[1]</td>
+        <td><input type='number' name='producod_$contador' readonly id='producod_$producto[1]' value='$producto[1]'></td>
         <td>$producto[2]</td>
         <td>$producto[8]</td>
     </tr>";
     }
 
-    function agregar_producto_a_venta($producto){
-        array_push($productos,$producto);
-    }
 
 
 

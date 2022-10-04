@@ -31,8 +31,8 @@
 
     $archivo = file("productos.txt");
     $i=0;
-    $codigo_modificacion = "";
-    echo '<form action="http://localhost/unidad2/ventas/productos/modificar.php" method="post">';
+    $codigo_modificacion = ""; 
+    echo '<form action="/unidad2/ventas/productos/modificar.php" method="post">';
      while (count($archivo)>$i) {
         $registro =  $archivo[$i];
         $producto = explode("@@",$registro);

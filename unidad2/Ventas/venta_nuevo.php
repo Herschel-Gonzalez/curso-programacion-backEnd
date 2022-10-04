@@ -5,15 +5,27 @@
     $renglon = "";
     $cont  = 0;
     $input = "";
+    $productos = array();
 
-/*
+
     if (isset($_POST['contador'])) {
         $cont = $_POST['contador'];
         if ($_POST['contador']>0) {
-            
+             $i =0;
+            while ($i<$cont) {
+                $producto =  buscar_producto($_POST['producod_'.$i]);
+                if ($producto!="") {
+                    array_push($productos,$producto);
+                    $renglon.= renglon_producto($producto,$cont);
+                }
+                
+              //  $input.= "<input type='text' id='produ_$cont' name='produ_$cont' value='".$_POST['produ_'.$i]."'/ > ";
+                $i++;
+               // $cont++;
+
+            }
         }
     }
-*/
 
 
 
@@ -26,8 +38,9 @@
            if ($producto!="") {
             #crear el renglon de la tabla
             $renglon.= renglon_producto($producto,$cont);
+            array_push($productos,$producto);
            // array_push($productos,renglon_producto($producto,$cont));
-            $input.= "<input type='text' id='produ_$cont' name='produ_$cont' value='".$_POST['codigo']."'/ > ";
+           // $input.= "<input type='text' id='produ_$cont' name='produ_$cont' value='".$_POST['codigo']."'/ > ";
             $cont++;
            }else{
             $mensaje = "El producto no existe.";
@@ -39,7 +52,26 @@
         
     }
 
-    echo get_productos_a_vender();
+
+
+//imprimimos la tabla
+if ($cont>0) {
+    # code...
+    $renglon= "";
+    var_dump($productos);
+for ($i=0; $i < count($productos); $i++) {
+    $producto = $productos[$i];
+        $renglon.= "<tr><td>No.</td>";
+        $renglon.="<td><input type='number' name='produ_$i' id='produ_$i'></td>";
+        
+        $renglon.="<td><input type='number' name='producod_$i' readonly id='producod_$producto[1]' value='$producto[1]'></td>";
+        $renglon.="<td>$producto[2]</td>";
+        $renglon.="<td>$producto[8]</td>";
+        $renglon.="</tr>";
+}
+}
+
+
 
     
 echo <<<_FORM
