@@ -47,6 +47,17 @@
         return $producto;
     }
 
+    function crear_renglon($contador){
+        return 
+    "<tr>
+        <td>$contador</td>
+        <td><input type='number' name='cant_$contador' id='cant_$contador' value='1'></td>
+        <td><input type='number' name='cod_$contador' readonly id='cod_$producto[1]' value='$producto[1]'></td>
+        <td><input type='text' name='nom_$contador' readonly id='nom_$producto[2]' value='$producto[2]'></td>
+        <td><input type='number' name='prec_$contador' readonly id='prec_$producto[8]' value='$producto[8]'></td>
+    </tr>";
+    }
+
     function renglon_producto($producto,$contador){
 
         
@@ -54,11 +65,11 @@
 
         return 
     "<tr>
-        <td>No.</td>
-        <td><input type='number' name='produ_$contador' id='produ_$contador'></td>
-        <td><input type='number' name='producod_$contador' readonly id='producod_$producto[1]' value='$producto[1]'></td>
-        <td>$producto[2]</td>
-        <td>$producto[8]</td>
+        <td>$contador</td>
+        <td><input type='number' name='cant_$contador' id='cant_$contador' value='1'></td>
+        <td><input type='number' name='cod_$contador' readonly id='cod_$contador' value='$producto[1]'></td>
+        <td><input type='text' name='nom_$contador' readonly id='nom_$contador' value='$producto[2]'></td>
+        <td><input type='number' name='prec_$contador' readonly id='prec_$contador' value='$producto[8]'></td>
     </tr>";
     }
 
