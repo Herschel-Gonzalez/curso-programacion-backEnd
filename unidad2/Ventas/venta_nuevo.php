@@ -62,7 +62,7 @@ if ($cont>0) {
 for ($i=0; $i < count($productos); $i++) {
     $producto = $productos[$i];
         $renglon.= "<tr><td>No.</td>";
-        $renglon.="<td><input type='number' name='produ_$i' id='produ_$i'></td>";
+        $renglon.="<td><input type='number' name='produ_$i' id='produ_$i' value='1'></td>";
         
         $renglon.="<td><input type='number' name='producod_$i' readonly id='producod_$producto[1]' value='$producto[1]'></td>";
         $renglon.="<td>$producto[2]</td>";
@@ -98,5 +98,28 @@ echo <<<_FORM
 
 </form>
 _FORM;
+
+
+function agregar_nuevo($producto){
+    $existentes = 0;
+    for ($i=0; $i < count($productos); $i++) { 
+        $prod = $productos[$i];
+        if ($prod[1]==$producto[1]) {
+            $existentes++;
+            $cantidad_existente = $prod[0];
+            $cantidad_a_agregar = $producto[0];
+            
+            $productos[$i]=$prod;
+        }
+    }
+
+    if ($existentes>0) {
+        
+    }else{
+        array_push($productos,$producto);
+    }
+
+}
+
 
 ?>
